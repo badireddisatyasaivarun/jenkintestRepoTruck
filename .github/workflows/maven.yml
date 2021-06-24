@@ -24,7 +24,9 @@ jobs:
 
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    - run: cd ~/actions-runner/deploy/jenkintestRepoTruck/jenkintestRepoTruck
+    - run: sudo docker container prune
+    - run: y
     - run: sudo docker image rm truck
     - run: sudo docker build -t truck .
-    - run: sudo docker container prune -y
     - run: sudo docker run -p 9090:9090 --name test --link docker-postgres:postgres truck

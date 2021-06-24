@@ -20,17 +20,9 @@ jobs:
       uses: actions/setup-java@v2
       with:
         java-version: '11'
-        maven-version: '4.0.0'
+        maven-version: '3.6.2'
+        maven-mirror: 'https://archive.apache.org/dist/maven/maven-3/'
         distribution: 'adopt'
-        
-    - name: Download Maven
-      run: |
-        curl -sL https://www-eu.apache.org/dist/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.zip -o maven.zip
-        sudo apt-get update
-        sudo apt-get -y install unzip
-        sudo unzip -d /usr/share maven.zip
-        sudo rm maven.zip
-        sudo ln -s /usr/share/apache-maven-4.0.0/bin/mvn /usr/bin/mvn
 
     - name: Build with Maven
       run: mvn -B package --file pom.xml

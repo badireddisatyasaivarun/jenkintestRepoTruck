@@ -30,7 +30,7 @@ jobs:
         sudo apt-get -y install unzip
         sudo unzip -d /usr/share maven.zip
         sudo rm maven.zip
-        sudo ln -s /usr/share/apache-maven-3.6.3/bin/mvn /usr/bin/mvn
-        echo "M2_HOME=/usr/share/apache-maven-3.6.3" | tee -a /etc/environment
+        sudo ln -s /usr/share/apache-maven-4.0.0/bin/mvn /usr/bin/mvn
+
     - name: Build with Maven
       run: mvn -B package --file pom.xml

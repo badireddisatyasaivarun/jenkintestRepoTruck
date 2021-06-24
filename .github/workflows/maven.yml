@@ -24,3 +24,7 @@ jobs:
 
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    - run: sudo docker image rm truck
+    - run: sudo docker build -t truck .
+    - run: sudo docker container prune -y
+    - run: sudo docker run -p 9090:9090 --name test --link docker-postgres:postgres truck

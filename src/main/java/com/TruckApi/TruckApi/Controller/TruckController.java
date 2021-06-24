@@ -31,6 +31,11 @@ public class TruckController {
 
 	@Autowired
 	private TruckService truckService;
+	
+	@GetMapping("/")
+	public String getTruckWithId() {
+		return "Success";
+	}
 
 	@GetMapping("/truck")
 	@ApiOperation(value = "Find Truck Data by transporterId or by approved status with pagination", notes = "we provide the requried keys value pairs as a query parameter and get the information of all the truck's with the given key value. if pageNo is provided it i paginated else all the data available will be returned")

@@ -81,6 +81,7 @@
 	</dependencies>
 
 	<build>
+		<finalName>truck</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -103,7 +104,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
-		<finalName>truck</finalName>
+		
 	</build>
 
 </project>

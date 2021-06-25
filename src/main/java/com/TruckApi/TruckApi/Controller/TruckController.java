@@ -34,7 +34,7 @@ public class TruckController {
 	
 	@GetMapping("/")
 	public String getTruckWithId() {
-		return "Success3";
+		return "Success4";
 	}
 
 	@GetMapping("/truck")

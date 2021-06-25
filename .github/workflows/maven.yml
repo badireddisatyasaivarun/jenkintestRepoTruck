@@ -21,10 +21,11 @@ jobs:
       with:
         java-version: '11'
         distribution: 'adopt'
-
+    - run: cd ~/actions-runner/deploy/jenkintestRepoTruck/jenkintestRepoTruck
+    - run: sudo rm -rf target
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-    - run: cd ~/actions-runner/deploy/jenkintestRepoTruck/jenkintestRepoTruck
+    
     - run: sudo docker container stop test || true
     - run: sudo docker container stop docker-postgres || true
     - run: sudo docker container prune -f
